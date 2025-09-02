@@ -1,69 +1,63 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="row justify-content-center">
-    <div class="col-lg-8">
+<div class="row justify-content-center" style="margin-top: 60px;">
+    <div class="col-lg-10">
         <!-- Hero Section -->
-        <div class="glass-card p-5 mb-4 text-center">
-            <h1 class="display-4 fw-bold text-white mb-3">
-                <i class="bi bi-lightning-charge text-warning me-3"></i>
+        <div style="background: white; border: 1px solid #e1e5e9; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); padding: 60px 40px;" class="text-center mb-5">
+            <h1 class="display-4 fw-bold mb-4" style="color: #111827;">
                 Shorten Your Links
             </h1>
-            <p class="lead text-white-50 mb-4">
+            <p class="lead mb-5" style="color: #6b7280;">
                 Create short, memorable links with powerful analytics. Fast, secure, and completely free.
             </p>
             
             <!-- URL Shortening Form -->
             <form method="post" action="{% url 'create_short_url' %}" class="mb-4">
                 {% csrf_token %}
-                <div class="row g-3">
-                    <div class="col-12">
-                        <div class="input-group input-group-lg">
-                            <span class="input-group-text bg-transparent border-end-0 text-white">
-                                <i class="bi bi-link"></i>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="input-group input-group-lg mb-4">
+                            <span class="input-group-text" style="background: #f8fafc; border: 2px solid #e1e5e9; border-right: none;">
+                                URL
                             </span>
                             <input type="url" 
-                                   class="form-control form-control-lg border-start-0" 
+                                   class="form-control" 
                                    name="original_url" 
                                    placeholder="Enter your long URL here..."
-                                   required>
+                                   required
+                                   style="border: 2px solid #e1e5e9; border-left: none; padding: 14px 16px;">
                         </div>
+                        
+                        <button type="submit" class="btn btn-lg px-5" style="background: #2563eb; border: none; color: white; padding: 12px 32px; border-radius: 8px;">
+                            Shorten URL
+                        </button>
                     </div>
                 </div>
-                
-                <button type="submit" class="btn btn-primary btn-lg mt-4 px-5">
-                    <i class="bi bi-scissors me-2"></i>Shorten URL
-                </button>
             </form>
         </div>
 
         <!-- Statistics Cards -->
-        <div class="row g-4 mb-4">
+        <div class="row g-4 mb-5">
             <div class="col-md-4">
-                <div class="glass-card p-4 text-center">
-                    <div class="text-white">
-                        <i class="bi bi-link-45deg display-4 text-primary mb-3"></i>
-                        <h3>{{ total_urls|default:0 }}</h3>
-                        <p class="mb-0">URLs Shortened</p>
-                    </div>
+                <div style="background: white; border: 1px solid #e1e5e9; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); padding: 40px 30px;" class="text-center">
+                    <h2 style="color: #2563eb; font-weight: 700;" class="mb-3">{{ total_urls|default:0 }}</h2>
+                    <h5 class="mb-2">URLs Shortened</h5>
+                    <p style="color: #6b7280;" class="mb-0">Total links created</p>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="glass-card p-4 text-center">
-                    <div class="text-white">
-                        <i class="bi bi-cursor-fill display-4 text-success mb-3"></i>
-                        <h3>{{ total_clicks|default:0 }}</h3>
-                        <p class="mb-0">Total Clicks</p>
-                    </div>
+                <div style="background: white; border: 1px solid #e1e5e9; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); padding: 40px 30px;" class="text-center">
+                    <h2 style="color: #059669; font-weight: 700;" class="mb-3">{{ total_clicks|default:0 }}</h2>
+                    <h5 class="mb-2">Total Clicks</h5>
+                    <p style="color: #6b7280;" class="mb-0">Links clicked</p>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="glass-card p-4 text-center">
-                    <div class="text-white">
-                        <i class="bi bi-lightning-fill display-4 text-warning mb-3"></i>
-                        <h3>99.9%</h3>
-                        <p class="mb-0">Uptime</p>
-                    </div>
+                <div style="background: white; border: 1px solid #e1e5e9; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); padding: 40px 30px;" class="text-center">
+                    <h2 style="color: #d97706; font-weight: 700;" class="mb-3">99.9%</h2>
+                    <h5 class="mb-2">Uptime</h5>
+                    <p style="color: #6b7280;" class="mb-0">Service availability</p>
                 </div>
             </div>
         </div>
