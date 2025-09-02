@@ -8,7 +8,6 @@
         <!-- Hero Section -->
         <div class="glass-card p-5 mb-4 text-center">
             <h1 class="display-4 fw-bold text-white mb-3">
-                <i class="bi bi-lightning-charge text-warning me-3"></i>
                 Shorten Your Links
             </h1>
             <p class="lead text-white-50 mb-4">
@@ -22,7 +21,7 @@
                     <div class="col-12">
                         <div class="input-group input-group-lg">
                             <span class="input-group-text bg-transparent border-end-0 text-white">
-                                <i class="bi bi-link"></i>
+                                URL
                             </span>
                             <input type="url" 
                                    class="form-control form-control-lg border-start-0" 
@@ -40,8 +39,7 @@
                             type="button" 
                             data-bs-toggle="collapse" 
                             data-bs-target="#advancedOptions">
-                        <i class="bi bi-gear me-1"></i>Advanced Options
-                        <i class="bi bi-chevron-down ms-1"></i>
+                        Advanced Options
                     </button>
                 </div>
                 
@@ -78,7 +76,7 @@
                 </div>
                 
                 <button type="submit" class="btn btn-primary btn-lg mt-4 px-5">
-                    <i class="bi bi-scissors me-2"></i>Shorten URL
+                    Shorten URL
                 </button>
             </form>
         </div>
@@ -87,27 +85,18 @@
         <div class="row g-4 mb-4">
             <div class="col-md-4">
                 <div class="stats-card text-center">
-                    <div class="stats-icon bg-primary text-white mx-auto">
-                        <i class="bi bi-link-45deg"></i>
-                    </div>
                     <h3 class="text-gradient">{{ total_urls|default:0 }}</h3>
                     <p class="text-muted mb-0">URLs Shortened</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="stats-card text-center">
-                    <div class="stats-icon bg-success text-white mx-auto">
-                        <i class="bi bi-cursor-fill"></i>
-                    </div>
                     <h3 class="text-gradient">{{ total_clicks|default:0 }}</h3>
                     <p class="text-muted mb-0">Total Clicks</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="stats-card text-center">
-                    <div class="stats-icon bg-warning text-white mx-auto">
-                        <i class="bi bi-lightning-fill"></i>
-                    </div>
                     <h3 class="text-gradient">99.9%</h3>
                     <p class="text-muted mb-0">Uptime</p>
                 </div>
@@ -118,7 +107,7 @@
         {% if recent_urls %}
         <div class="glass-card p-4">
             <h4 class="text-white mb-3">
-                <i class="bi bi-clock-history me-2"></i>Recent URLs
+                Recent URLs
             </h4>
             <div class="table-responsive">
                 <table class="table table-glass">
@@ -149,11 +138,11 @@
                             <td>
                                 <button class="btn btn-sm btn-outline-light" 
                                         onclick="copyToClipboard('{{ url.get_short_url }}')">
-                                    <i class="bi bi-clipboard"></i>
+                                    Copy
                                 </button>
                                 <a href="{% url 'url_detail' url.short_code %}" 
                                    class="btn btn-sm btn-outline-info">
-                                    <i class="bi bi-bar-chart"></i>
+                                    Stats
                                 </a>
                             </td>
                         </tr>
@@ -170,21 +159,18 @@
 <div class="row g-4 mt-4">
     <div class="col-md-4">
         <div class="glass-card p-4 text-center text-white h-100">
-            <i class="bi bi-shield-check display-4 text-success mb-3"></i>
             <h5>Secure & Reliable</h5>
             <p class="text-white-50">Your links are protected with enterprise-grade security and 99.9% uptime guarantee.</p>
         </div>
     </div>
     <div class="col-md-4">
         <div class="glass-card p-4 text-center text-white h-100">
-            <i class="bi bi-graph-up display-4 text-info mb-3"></i>
             <h5>Detailed Analytics</h5>
             <p class="text-white-50">Track clicks, locations, devices, and more with comprehensive analytics dashboard.</p>
         </div>
     </div>
     <div class="col-md-4">
         <div class="glass-card p-4 text-center text-white h-100">
-            <i class="bi bi-palette display-4 text-warning mb-3"></i>
             <h5>Custom Short Codes</h5>
             <p class="text-white-50">Create memorable, branded short links with custom codes that reflect your brand.</p>
         </div>
