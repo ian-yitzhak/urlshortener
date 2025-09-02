@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Link Expired | LinkShort{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-6">
+        <div class="glass-card p-5 text-center">
+            <i class="bi bi-clock-history display-1 text-warning mb-4"></i>
+            <h2 class="text-white mb-3">Link Expired</h2>
+            <p class="text-white-50 mb-4">
+                Sorry, this shortened link has expired and is no longer available.
+            </p>
+            <div class="alert alert-warning bg-transparent border-warning" role="alert">
+                <strong>Expired:</strong> {{ url.expires_at|date:"F j, Y \a\t g:i A" }}
+            </div>
+            <a href="{% url 'home' %}" class="btn btn-primary btn-lg">
+                <i class="bi bi-house me-2"></i>Go Home
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
